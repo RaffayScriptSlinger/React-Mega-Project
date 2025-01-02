@@ -1,7 +1,7 @@
 import config from "../config"
 import { Client, ID, Databases, Storage, Query } from "appwrite"
 
-export class Service {
+export default class appwriteService {
     client = new Client();
     databases;
     bucket;

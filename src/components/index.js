@@ -3,5 +3,8 @@ import Footer from "./Footer/Footer"
 import LogoutBtn from "./Header/LogoutBtn"
 import Logo from "./Logo"
 import Container from "postcss/lib/container"
+import Button from  "./Button"
+import PostCard from "./postCard/postCard"
+import Input from "./Input"
  
-export {Header,Footer,LogoutBtn,Logo,Container}
+export {Header,Footer,LogoutBtn,Logo,Container,Button,PostCard,Input}
