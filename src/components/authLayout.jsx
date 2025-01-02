@@ -19,6 +19,6 @@ export default function Protected({ children, authentication = true }) {
 
     }, [authStatus, Navigate, authentication])
 
-    return loader ? <div>Loading</div> : <>{children}</>
+    return loader ? <div>Loading...</div> : <>{children}</>
 }
 
