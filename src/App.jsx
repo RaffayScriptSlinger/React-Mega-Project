@@ -31,6 +31,7 @@ function App() {
     <main className=''>
       <Header />
       {/* Outlet Here */}
+      // Todo : Add Outlet
       <Footer />
     </main>
 
