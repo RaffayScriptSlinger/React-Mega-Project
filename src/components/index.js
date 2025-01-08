@@ -10,5 +10,7 @@ import RITE from "./RITE"
 import Select from "./Select/Select"
 import SignUp from "./SginUp/SignUp"
 import Login from "./Login/Login"
+import PostForm from "./Post-Form/postForm"
 
-export { Header, Footer, LogoutBtn, Logo, Container, Button, PostCard, Input, RITE, Select }
+
+export { Header, Footer, LogoutBtn, Logo, Container, Button, PostCard, Input, RITE, Select,Login,SignUp,PostForm }

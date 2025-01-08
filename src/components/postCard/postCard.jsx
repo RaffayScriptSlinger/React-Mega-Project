@@ -2,7 +2,7 @@ import React from 'react'
 import appwriteService from "../../appwrite/databaseConfig"
 import { Link } from 'react-router-dom'
 
-function postCard({
+function PostCard({
     $id, title, featureImage
 }) {
     return (
@@ -18,4 +18,4 @@ function postCard({
     )
 }
 
-export default postCard
+export default PostCard
