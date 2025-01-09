@@ -1,23 +1,24 @@
 import React from 'react'
-import { Container, LogoutBtn, Logo } from '../index'
-import { Link } from 'react-router-dom'
+import { Container, Logo } from '../index'
+import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 
 
 function Header() {
 
-  const authStatus = useSelector((state) => state.auth.currentStatus)
+  const currentStatus = useSelector((state) => state.auth.currentStatus);
+  // const navigate = useNavigate()
   const navigate = useNavigate()
-  console.log(authStatus)
+
 
 
   const navItems = [
     {
       name: "Login",
       slug: "/Login",
-      active: !authStatus
-    }, 
+      active: !currentStatus
+    },
     {
       name: "Home",
       slug: "/",
@@ -26,12 +27,12 @@ function Header() {
     {
       name: "SignUp",
       slug: "/SignUp",
-      active: !authStatus
+      active: !currentStatus
     },
     {
       name: "All-Post",
       slug: "/all-Post",
-      active: authStatus
+      active: currentStatus
     }
   ]
   return (
@@ -43,24 +44,33 @@ function Header() {
               <Logo width='86px' />
             </Link>
           </div>
-          <ul>
+          <ul className='flex items-center'>
             {navItems.map((items) =>
               items.active ? (
                 <li key={items.name}>
+                  {/*                  
                   <button
                     onClick={() => { navigate(items.slug) }}
                     className='inline-block py-2 px-6 duration-200 rounded hover:bg-blue-100'
                   >
                     {items.name}
 
+                  </button> */}
+                  <button
+                    onClick={() => navigate(items.slug)}
+                    className="inline-block py-2 px-6 duration-200 rounded hover:bg-blue-100"
+                  >
+                    {items.name}
                   </button>
+
+
 
                 </li>
               ) : null
             )}
           </ul>
           {
-            authStatus && (<li><LogoutBtn /></li>)
+            currentStatus && (<li><LogoutBtn /></li>)
 
           }
         </nav>
