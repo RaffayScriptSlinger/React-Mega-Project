@@ -2,13 +2,12 @@ import React from 'react'
 import { Container, Logo } from '../index'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-// import { useNavigate } from 'react-router-dom'
+
 
 
 function Header() {
 
   const currentStatus = useSelector((state) => state.auth.currentStatus);
-  // const navigate = useNavigate()
   const navigate = useNavigate()
 
 
@@ -48,30 +47,18 @@ function Header() {
             {navItems.map((items) =>
               items.active ? (
                 <li key={items.name}>
-                  {/*                  
-                  <button
-                    onClick={() => { navigate(items.slug) }}
-                    className='inline-block py-2 px-6 duration-200 rounded hover:bg-blue-100'
-                  >
-                    {items.name}
-
-                  </button> */}
                   <button
                     onClick={() => navigate(items.slug)}
                     className="inline-block py-2 px-6 duration-200 rounded hover:bg-blue-100"
                   >
                     {items.name}
                   </button>
-
-
-
                 </li>
               ) : null
             )}
           </ul>
           {
             currentStatus && (<li><LogoutBtn /></li>)
-
           }
         </nav>
       </Container>
