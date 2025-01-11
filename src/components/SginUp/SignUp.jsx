@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import authService from '../../appwrite/auth'
+import service from '../../appwrite/databaseConfig'
 import { Link, useNavigate } from 'react-router-dom'
 import { login } from '../../store/authSlice'
 import { Button, Input, Logo } from "../index"
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
+
 
 function SignUp() {
     const [error, setError] = useState()
@@ -15,9 +16,9 @@ function SignUp() {
     const createAccount = async (data) => {
         setError("")
         try {
-            const userData = await authService.createAcount(data)
+            const userData = await service.createAcount(data)
             if (userData) {
-                const userData = await authService.getCurrentUser()
+                const userData = await service.getCurrentUser()
 
                 if (userData) dispatch(login(userData))
                 navigate(`/`)
@@ -48,7 +49,7 @@ function SignUp() {
                 </p>
                 {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
-                <form onSubmit={handleSubmit(create)}>
+                <form onSubmit={handleSubmit(createAccount)}>
                     <div className='space-y-5'>
                         <Input
                             label="Full Name: "

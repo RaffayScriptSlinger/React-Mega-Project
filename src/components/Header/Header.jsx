@@ -24,8 +24,8 @@ function Header() {
       active: true
     },
     {
-      name: "SignUp",
-      slug: "/SignUp",
+      name: "signup",
+      slug: "/signup",
       active: !currentStatus
     },
     {

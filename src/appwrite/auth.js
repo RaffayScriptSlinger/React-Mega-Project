@@ -37,13 +37,14 @@ export class AuthService {
     }
     async getCurrentUser() {
         try {
-            return this.account.get()
-
+            const user = await this.account.get();
+            return user;
         } catch (error) {
-            throw error
+            console.error('Error fetching current user:', error); // Optional: log error for debugging
+            return null; // Gracefully return null if an error occurs
         }
-        return null;
     }
+    
     async logout() {
         try {
             await this.account.deleteSessions()
