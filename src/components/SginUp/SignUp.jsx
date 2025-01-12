@@ -5,6 +5,7 @@ import { login } from '../../store/authSlice'
 import { Button, Input, Logo } from "../index"
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
+import { AuthService } from '../../appwrite/auth'
 
 
 function SignUp() {
@@ -16,7 +17,7 @@ function SignUp() {
     const createAccount = async (data) => {
         setError("")
         try {
-            const userData = await service.createAcount(data)
+            const userData = await AuthService.createAccount(data)
             if (userData) {
                 const userData = await service.getCurrentUser()
 
