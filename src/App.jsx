@@ -33,7 +33,7 @@ function App() {
       <Header />
       <Outlet/>
       {/* Outlet Here */}
-      // Todo : Add Outlet
+      {/* // Todo : Add Outlet */}
       <Footer />
     </main>
 

@@ -4,7 +4,7 @@ import appwriteService from '../../appwrite/databaseConfig'
 import { useNavigate } from 'react-router-dom'
 
 function Home() {
-    const Navigate = useNavigate()
+    
     const [post, setPost] = useState([])
 
     useEffect(() => {
