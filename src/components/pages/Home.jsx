@@ -12,7 +12,6 @@ function Home() {
             if (post) {
                 setPost(post.documents)
             }
-
         })
     })
     if (post.length === 0) {
@@ -24,7 +23,6 @@ function Home() {
                 </div>
             </Container>
         )
-
     }
 
     return (
@@ -42,9 +40,9 @@ function Home() {
 
                 </div>
             </Container>
-
-
         </div>)
 }
+
+// Here is an commit
 
 export default Home
